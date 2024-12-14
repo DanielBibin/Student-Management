@@ -3,6 +3,7 @@ cnt = 0
 class Register:
     def __init__(self):
         st.header("Registration")
+        Registeration_Form = st.form("Registeration Form")#creating the streamlit form
         def Registeration():
             conn = sq.connect("Student_Management.db")#creating connection with the sqlite3 database
             cursor = conn.cursor()
@@ -23,7 +24,7 @@ class Register:
                     Registeration_Form.warning("Students Record Already Exist")#putting out a warning if the database already exists
             conn.close()#closing the connection with the database
 
-        Registeration_Form = st.form("Registeration Form")#creating the streamlit form
+
         with Registeration_Form:#using the form
             Adno = st.text_input("Enter Admission Number of New Student:")#text input for admission number of the new student
             Name = st.text_input("Enter Name of New Student:")#text input for the name of the new student
