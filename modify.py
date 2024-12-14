@@ -5,7 +5,7 @@ class Modify:
         st.header("Modification")
         global Modification_Form
         Modification_Form = st.form("Modification Form")#creating streamlit form
-        def Modification():
+        def Modification(Modification_Form):
             conn = sq.connect("Student_Management.db")#connecting to sqlite3 database
             cursor = conn.cursor()
             global cnt
@@ -31,5 +31,5 @@ class Modify:
             class_div = st.text_input("Enter New Class And Division:")#text input for the new class and division
             col1, col2, col3, col4, col5 = st.columns(5)
             with col3:
-                st.form_submit_button("Modify", on_click=Modification())#creating form submit button
+                st.form_submit_button("Modify", on_click=lambda: Modification(Modification_Form))#creating form submit button
     
