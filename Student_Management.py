@@ -9,7 +9,6 @@ st.markdown("<h1 style = 'text_align: center;' >STUDENT MANAGEMENT SYSTEM</h1>",
 
 with st.sidebar:
     selected = option_menu("Main Menu", ["Register", "Modify", "Delete", "Display"], default_index=0)
-    exit_app = st.button("Shut Down")
 
 if selected == 'Register':
     Student_1 = register.Register()
