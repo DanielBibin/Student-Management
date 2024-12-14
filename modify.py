@@ -15,7 +15,7 @@ class Modify:
                     Ano.append(AdmNo[i][0])
                 if Adno in Ano:#checking if the admission number already exists
                     cnt=0
-                    cursor.execute("UPDATE Student SET Name = ?, class_div = ? WHERE Adno = ?", (Name.replace(' ', '_'), class_div, Adno))#modifying with values supplied by the user to the database
+                    cursor.execute("UPDATE Student SET Name = ?, class_div = ? WHERE Adno = ?", (Name, class_div, Adno))#modifying with values supplied by the user to the database
                     conn.commit()#commiting the changes to the database
                 else:
                     cnt = 0
