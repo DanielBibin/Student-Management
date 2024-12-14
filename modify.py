@@ -3,6 +3,7 @@ cnt = 0
 class Modify:
     def __init__(self):
         st.header("Modification")
+        Modification_Form = st.form("Modification Form")#creating streamlit form
         def Modification():
             conn = sq.connect("Student_Management.db")#connecting to sqlite3 database
             cursor = conn.cursor()
@@ -23,7 +24,6 @@ class Modify:
                     Modification_Form.warning("Students Record Does Not Exist")#putting out a warning that the student records do not exist
             conn.close()#closing connection with the database
             
-        Modification_Form = st.form("Modification Form")#creating streamlit form
         with Modification_Form:#using the streamlit form
             Adno = st.text_input("Enter Admission Number Of Student Record To Be Modified:")#text input for the admission number of the student record to be modified
             Name = st.text_input("Enter New Name:")#text input for the new name
