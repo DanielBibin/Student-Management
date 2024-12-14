@@ -17,7 +17,7 @@ class Register:
                     cnt=0
                     cursor.execute("INSERT INTO Student VALUES(?, ?, ?)", (Adno, Name, class_div))#inserting the values provided by the user into the database
                     conn.commit()#commiting changes to the database
-                    st.markdown("Successfully Registered")
+                    Registration_Form.markdown("Successfully Registered")
                 else:
                     cnt = 0
                     Registeration_Form.warning("Students Record Already Exist")#putting out a warning if the database already exists
