@@ -3,6 +3,7 @@ cnt = 0
 class Register:
     def __init__(self):
         st.header("Registration")
+        global Registration_Form
         Registeration_Form = st.form("Registeration Form")#creating the streamlit form
         def Registeration():
             conn = sq.connect("Student_Management.db")#creating connection with the sqlite3 database
