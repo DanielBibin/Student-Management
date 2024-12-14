@@ -5,7 +5,7 @@ class Register:
         st.header("Registration")
         global Registration_Form
         Registeration_Form = st.form("Registeration Form")#creating the streamlit form
-        def Registeration():
+        def Registeration(Registration_Form):
             conn = sq.connect("Student_Management.db")#creating connection with the sqlite3 database
             cursor = conn.cursor()
             global cnt
@@ -32,7 +32,4 @@ class Register:
             class_div = st.text_input("Enter Class And Division Of New Student:")#text input for the class and division of the new student
             col1, col2, col3, col4, col5 = st.columns(5)
             with col3:
-                st.form_submit_button("Register", on_click=Registeration())#creating strealit form submit button
-                
-        
-    
+                st.form_submit_button("Register", on_click=lambda: Registeration(Registration_Form))#creating strealit form submit button
