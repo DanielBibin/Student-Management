@@ -3,6 +3,7 @@ cnt = 0
 class Delete:
     def __init__(self):
         st.header("Deletion") 
+        global Deletion_Form
         Deletion_Form = st.form("Deletion Form")#creating streamlit form
         def Deletion():  
             conn = sq.connect("Student_Management.db")
