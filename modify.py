@@ -3,6 +3,7 @@ cnt = 0
 class Modify:
     def __init__(self):
         st.header("Modification")
+        global Modification_Form
         Modification_Form = st.form("Modification Form")#creating streamlit form
         def Modification():
             conn = sq.connect("Student_Management.db")#connecting to sqlite3 database
