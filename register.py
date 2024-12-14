@@ -15,7 +15,7 @@ class Register:
                     Ano.append(AdmNo[i][0])
                 if Adno not in Ano:#checking if adno is already present in the database
                     cnt=0
-                    cursor.execute("INSERT INTO Student VALUES(?, ?, ?)", (Adno, Name.replace(' ', '_'), class_div))#inserting the values provided by the user into the database
+                    cursor.execute("INSERT INTO Student VALUES(?, ?, ?)", (Adno, Name, class_div))#inserting the values provided by the user into the database
                     conn.commit()#commiting changes to the database
                 else:
                     cnt = 0
