@@ -1,5 +1,4 @@
 streamlit
 streamlit-option-menu
-os
 keyboard
 sqlite3
