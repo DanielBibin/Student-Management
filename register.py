@@ -32,4 +32,4 @@ class Register:
             class_div = st.text_input("Enter Class And Division Of New Student:")#text input for the class and division of the new student
             col1, col2, col3, col4, col5 = st.columns(5)
             with col3:
-                st.form_submit_button("Register", on_click=lambda: Registeration(Registration_Form))#creating strealit form submit button
+                st.form_submit_button("Register", on_click=lambda: Registeration(Registeration_Form))#creating strealit form submit button
