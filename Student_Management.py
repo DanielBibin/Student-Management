@@ -1,27 +1,24 @@
 import register, modify, delete, display, streamlit as st, sqlite3 as sq, os, keyboard, time
 from streamlit_option_menu import option_menu
 
-header = st.empty()
-
 conn = sq.connect("Student_Management.db")
 cursor = conn.cursor()
 cursor.execute("CREATE TABLE IF NOT EXISTS Student(Adno TEXT, Name TEXT, class_div TEXT)")
 conn.commit()
 st.markdown("<h1 style = 'text_align: center;' >STUDENT MANAGEMENT SYSTEM</h1>", unsafe_allow_html=True)
 
-with header:
-    with st.sidebar:
-        selected = option_menu("Main Menu", ["Register", "Modify", "Delete", "Display"], default_index=0)
-        exit_app = st.button("Shut Down")
+with st.sidebar:
+    selected = option_menu("Main Menu", ["Register", "Modify", "Delete", "Display"], default_index=0)
+    exit_app = st.button("Shut Down")
 
-    if selected == 'Register':
-        Student_1 = register.Register()
-    elif selected == 'Modify':
-        Student_1 = modify.Modify()
-    elif selected == 'Delete':
-        Student_1 = delete.Delete()
-    elif selected == 'Display':
-        Student_1 = display.Display()
+if selected == 'Register':
+    Student_1 = register.Register()
+elif selected == 'Modify':
+    Student_1 = modify.Modify()
+elif selected == 'Delete':
+    Student_1 = delete.Delete()
+elif selected == 'Display':
+    Student_1 = display.Display()
 
 cursor.execute("SELECT Adno FROM Student;")
 AdmNo = cursor.fetchall()
@@ -42,13 +39,3 @@ for i in Ano:
         conn.commit()
         
 conn.close()
-
-if exit_app:
-    header.empty()
-    st.header("Thank You For Using Our Program")
-    time.sleep(2)
-    keyboard.press_and_release("ctrl+w")
-    pid = os.getpid()
-    p = psutil.Process(pid)
-    p.terminate()
-    
