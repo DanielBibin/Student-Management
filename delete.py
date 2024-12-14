@@ -19,7 +19,7 @@ class Delete:
                     cnt=0
                     cursor.execute("DELETE FROM Student WHERE Adno = ?", (Adno,))#executing sqlite3 command for deletion of values
                     conn.commit()#commiting changes to database
-                    Deletion_Form.markdown("Successfully Modified")
+                    Deletion_Form.markdown("Successfully Deleted")
                 else:
                     cnt=0
                     Deletion_Form.warning("Student Records Does Not Exist")
