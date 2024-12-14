@@ -17,6 +17,7 @@ class Modify:
                     cnt=0
                     cursor.execute("UPDATE Student SET Name = ?, class_div = ? WHERE Adno = ?", (Name, class_div, Adno))#modifying with values supplied by the user to the database
                     conn.commit()#commiting the changes to the database
+                    Modification_Form.markdown("Successfully Modified")
                 else:
                     cnt = 0
                     Modification_Form.warning("Students Record Does Not Exist")#putting out a warning that the student records do not exist
