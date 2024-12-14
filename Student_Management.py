@@ -5,8 +5,8 @@ conn = sq.connect("Student_Management.db")
 cursor = conn.cursor()
 cursor.execute("CREATE TABLE IF NOT EXISTS Student(Adno TEXT, Name TEXT, class_div TEXT)")
 conn.commit()
-st.markdown("<h1 style = 'text_align: center;' >STUDENT MANAGEMENT SYSTEM</h1>", unsafe_allow_html=True)
 st.set_page_config(page_title="Student Management")
+st.markdown("<h1 style = 'text_align: center;' >STUDENT MANAGEMENT SYSTEM</h1>", unsafe_allow_html=True)
 
 with st.sidebar:
     selected = option_menu("Main Menu", ["Register", "Modify", "Delete", "Display"], default_index=0)
