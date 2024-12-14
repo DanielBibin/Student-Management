@@ -3,6 +3,7 @@ cnt = 0
 class Delete:
     def __init__(self):
         st.header("Deletion") 
+        Deletion_Form = st.form("Deletion Form")#creating streamlit form
         def Deletion():  
             conn = sq.connect("Student_Management.db")
             cursor = conn.cursor()
@@ -23,7 +24,7 @@ class Delete:
                     Deletion_Form.warning("Student Records Does Not Exist")
             conn.close()#closing connection with database
         
-        Deletion_Form = st.form("Registration Form")#creating streamlit form
+        
         with Deletion_Form:
             Adno = st.text_input("Enter Admission Number Of Student Record To Be Deleted:")#text input to input admission number to be deleted
             col1, col2, col3, col4, col5 = st.columns([1,1,1,1,1])#creating columns for better button placing 
