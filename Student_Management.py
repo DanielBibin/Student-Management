@@ -1,4 +1,4 @@
-import register, modify, delete, display, streamlit as st, sqlite3 as sq, os, keyboard, time
+import register, modify, delete, display, streamlit as st, sqlite3 as sq
 from streamlit_option_menu import option_menu
 
 conn = sq.connect("Student_Management.db")
